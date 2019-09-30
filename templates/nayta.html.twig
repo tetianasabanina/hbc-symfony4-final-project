@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aloite{% endblock %}
+
+ {% block body %}
+ 
+    <h1>Aloite</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Aihe</th>
+            <th>Kuvaus</th>
+            <th>Tekijä</th>
+            <th>Sahköposti</th>
+            <th>PVM</th>
+            <th>Toiminnot</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>{{ aloite.id }}</th>
+                <td>{{ aloite.aihe }}</td>
+                <td>{{ aloite.kuvaus }}</td>
+                <td>{{ aloite.etunimi }} {{ aloite.sukunimi }} </td>
+                <td>{{ aloite.spostiosoite }}</td>
+                <td>{{ aloite.kirjauspaiva|date("d/m/Y") }}</td>
+                <td>
+                     <!--<a href="{{ path('aloite_muokkaa', {id: aloite.id}) }}" class="btn btn-success">Muokkaa</a>-->
+                    <button muokkaa-aloite="{{ aloite.id }}" class="btn btn-success muokkaa-aloite">Muokkaa</button>
+                    <!-- <a href="{{ path('aloite_poista', {id: aloite.id}) }}" class="btn btn-success">Poista</a>-->
+                    <button poista-aloite="{{ aloite.id }}" class="btn btn-danger poista-aloite">Poista</button>
+                </td>
+                </tr>
+           
+        </tbody>
+
+    </table>
+ 
+ {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/js/main.js"></script>
+{% endblock %}
