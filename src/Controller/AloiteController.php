@@ -19,12 +19,10 @@ class  AloiteController extends AbstractController {
         $aloitteet = $this->getDoctrine()->getRepository(AloiteLaatikko::class)->findAll();
         // var_dump($aloitteet);
 
-
         // Pyydetään näkymää näytämään kaikki linkit
         return $this->render('index.html.twig', [
             'aloitteet' => $aloitteet,
         ]);
-            
     }       
 
     /**
