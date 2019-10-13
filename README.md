@@ -4,6 +4,6 @@ This project (Sähköinen aloitelaatikko) is the final assignment for the course
 ### PHP 7.3.10
 https://www.php.net/downloads.php
 ### Composer 
-getcomposer.org/download/
+https://getcomposer.org/download/
 ### Symfony 4 
 https://symfony.com/4
